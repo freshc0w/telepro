@@ -35,6 +35,9 @@ body {
   font-family: var(--font-regular);
   letter-spacing: 0.06rem;
   font-weight: 400;
+  background: url(assets/img-noise-1200x1280.png);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #root {
@@ -48,6 +51,18 @@ h1,
 h2,
 h3 {
   font-family: var(--font-title);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 4.5vw, 3.25rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+}
+
+h3 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
 }
 
 a {
@@ -69,6 +84,7 @@ header > ul {
   justify-content: space-around;
   gap: 2rem;
   font-size: var(--font-small);
+  font-family: var(--font-bold);
 }
 
 header > img {
@@ -85,8 +101,7 @@ header > img {
   --max-landing-width: 768px;
 }
 
-.landing-title {
-  font-size: clamp(2rem, 3vw, 2.75rem);
+h1.landing-title {
   max-width: var(--max-landing-width);
   margin: 0;
 }
@@ -125,7 +140,7 @@ header > img {
   }
 }
 
-.landing-img-container > img {
+.landing-img-container > img.landing-banner {
   margin-top: 1rem;
   border-top: 1px solid whitesmoke;
   --landing-img-width: min(40rem, 80vw);
@@ -133,4 +148,19 @@ header > img {
   width: var(--landing-img-width);
   height: var(--landing-img-height);
   border-radius: var(--landing-img-height) var(--landing-img-height) 0 0;
+}
+
+.landing-img-container > img.landing-capsules {
+  width: 200px;
+  position: absolute;
+  bottom: -20px;
+  left: calc(50% - 100px);
+  mix-blend-mode: multiply;
+}
+
+#products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
