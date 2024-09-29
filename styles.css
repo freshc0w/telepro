@@ -16,13 +16,14 @@
 
 :root {
   --primary-color: #007130;
-  --secondary-color: #f4f4f4;
+  --secondary-color: #FF5733;
   --background: #f5efdd;
   --divider: #dbd3c2;
   --font-bold: "Pluto Cond Bold", sans-serif;
   --font-regular: "Pluto Cond Regular", sans-serif;
   --font-title: "Pluto Cond Black", sans-serif;
   --font-small: 0.85rem;
+  --font-smaller: 0.7rem;
 }
 
 body {
@@ -96,10 +97,37 @@ header > img {
   margin: 0;
 }
 
+.landing-img-container {
+  position: relative;
+}
 
+.landing-shopnow-btn {
+  --btn-width: 7.5rem;
+  position: absolute;
+  width: var(--btn-width);
+  top: 0;
+  /* center it */
+  left: calc(50% - var(--btn-width) / 2);
+  background-color: var(--secondary-color);
+  color: whitesmoke;
+  padding: 0.5rem 1rem;
+  border: 2px solid whitesmoke;
+  border-radius: 1rem;
+  font-size: var(--font-small);
+  cursor: pointer;
+}
+
+/* smaller than 650px */
+@media screen and (max-width: 650px) {
+  .landing-shopnow-btn {
+    font-size: var(--font-smaller);
+    width: calc(var(--btn-width) * 0.9);
+  }
+}
 
 .landing-img-container > img {
   margin-top: 1rem;
+  border-top: 1px solid whitesmoke;
   --landing-img-width: min(40rem, 80vw);
   --landing-img-height: calc(var(--landing-img-width) * 0.5);
   width: var(--landing-img-width);
