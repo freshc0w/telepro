@@ -43,7 +43,9 @@ body {
   text-align: center;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-title);
 }
 
@@ -78,10 +80,29 @@ header > img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
+  --max-landing-width: 768px;
 }
 
 .landing-title {
-  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
-  max-width: 768px;
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  max-width: var(--max-landing-width);
+  margin: 0;
+}
+
+.landing-subtitle {
+  font-size: var(--font-small);
+  max-width: calc(var(--max-landing-width) * 0.8);
+  margin: 0;
+}
+
+
+
+.landing-img-container > img {
+  margin-top: 1rem;
+  --landing-img-width: min(40rem, 80vw);
+  --landing-img-height: calc(var(--landing-img-width) * 0.5);
+  width: var(--landing-img-width);
+  height: var(--landing-img-height);
+  border-radius: var(--landing-img-height) var(--landing-img-height) 0 0;
 }
