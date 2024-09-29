@@ -1,0 +1,87 @@
+/* Help me initialise some defauly styling for a website project */
+@font-face {
+  font-family: "Pluto Cond Bold";
+  src: url("font/Pluto Cond Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Pluto Cond Regular";
+  src: url("font/Pluto Cond Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Pluto Cond Black";
+  src: url("font/Pluto Cond Black.otf") format("opentype");
+}
+
+:root {
+  --primary-color: #007130;
+  --secondary-color: #f4f4f4;
+  --background: #f5efdd;
+  --divider: #dbd3c2;
+  --font-bold: "Pluto Cond Bold", sans-serif;
+  --font-regular: "Pluto Cond Regular", sans-serif;
+  --font-title: "Pluto Cond Black", sans-serif;
+  --font-small: 0.85rem;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  box-sizing: border-box;
+  font-family: var(--font-regular);
+  letter-spacing: 0.06rem;
+  font-weight: 400;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+}
+
+a {
+  text-decoration: none;
+}
+
+#nav {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--divider);
+}
+
+header > ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  font-size: var(--font-small);
+}
+
+header > img {
+  width: 100px;
+  mix-blend-mode: multiply;
+}
+
+#landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.landing-title {
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  max-width: 768px;
+}
