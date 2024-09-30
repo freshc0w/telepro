@@ -15,7 +15,7 @@
 }
 
 :root {
-  --primary-color: #007130;
+  --primary-color: rgb(0, 113, 48);
   --secondary-color: #ff5733;
   --background: #f5efdd;
   --divider: #dbd3c2;
@@ -195,6 +195,7 @@ h4 {
 .product-card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 1rem;
   border: 1px solid var(--divider);
   border-radius: 1rem;
@@ -204,6 +205,7 @@ h4 {
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .product-card:hover {
@@ -211,11 +213,19 @@ h4 {
 }
 
 .product-card > img {
-  width: 50%;
+  width: 45%;
   padding: 1rem;
   transition: transform 0.3s ease;
   transform-origin: bottom center;
-  transform: scale(1.4) translateY(-0.5rem);
+  transform: scale(1.4) translateY(-0.75rem);
+}
+
+.product-card > .collection-kit {
+  width: 90%
+}
+
+.product-card > .six-month-plan {
+  width: 100%;
 }
 
 .product-card > img:hover,
@@ -223,7 +233,7 @@ h4 {
   transform: scale(1);
 }
 
-.product-card > p.product-name {
+.product-card p.product-name {
   font-family: var(--font-bold);
   font-size: var(--font-medium);
 }
@@ -231,6 +241,8 @@ h4 {
 .product-card:hover {
   background-color: rgba(230, 230, 230,0.6);
   /* color: whitesmoke; */
+  background-color: rgba(0, 113, 48, 0.6);
+  color: white;
 }
 
 .shop-now-btn {
