@@ -181,15 +181,14 @@ h4 {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   row-gap: max(1rem, 6vw);
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 @media screen and (max-width: 650px) {
   .products-container {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    row-gap: 3rem
+    row-gap: 3rem;
   }
-  
 }
 
 .product-card {
@@ -221,7 +220,7 @@ h4 {
 }
 
 .product-card > .collection-kit {
-  width: 90%
+  width: 90%;
 }
 
 .product-card > .six-month-plan {
@@ -239,7 +238,7 @@ h4 {
 }
 
 .product-card:hover {
-  background-color: rgba(230, 230, 230,0.6);
+  background-color: rgba(230, 230, 230, 0.6);
   /* color: whitesmoke; */
   background-color: rgba(0, 113, 48, 0.6);
   color: white;
@@ -261,10 +260,9 @@ h4 {
   z-index: 1;
   overflow: hidden;
   font-family: var(--font-bold);
- }
- 
- 
- .shop-now-btn:after {
+}
+
+.shop-now-btn:after {
   content: "";
   /* background: white; */
   background: var(--secondary-color);
@@ -276,18 +274,18 @@ h4 {
   bottom: 0;
   transform: skewX(-45deg) scale(0, 1);
   transition: all 0.5s;
- }
- 
- .shop-now-btn:hover:after,
- .product-card:hover .shop-now-btn:after {
+}
+
+.shop-now-btn:hover:after,
+.product-card:hover .shop-now-btn:after {
   transform: skewX(-45deg) scale(1, 1);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
- }
+}
 
- .product-name {
+.product-name {
   margin: 0.5rem 0;
- }
+}
 
 .rating {
   display: flex;
@@ -298,4 +296,101 @@ h4 {
 .rating > img {
   width: 60%;
   mix-blend-mode: multiply;
+}
+
+.values-header-container {
+  max-width: 80%;
+  margin-inline: auto;
+}
+
+header.values-header {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  gap: 2rem;
+}
+
+.values-container {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  gap: 3rem;
+}
+.value-card {
+  border: 1px solid black;
+  height: 400px;
+  flex: 1;
+  border-radius: 1rem;
+}
+
+.value-card {
+  transition: transform 0.25s ease-in;
+  --translate-first: -1.25rem;
+  --translate-second: 1.25rem;
+  --translate-third: 0rem;
+  --translate-fourth: 2.5rem;
+  --hover-offset: -1.5rem;
+}
+
+
+
+.value-card {
+  --transition-time: 0.2s;
+  transition: transform var(--transition-time) ease-in, filter var(--transition-time) ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.value-card:first-child {
+  transform: translateY(var(--translate-first));
+}
+
+.value-card:nth-child(2) {
+  transform: translateY(var(--translate-second));
+  /* background-image: url(assets/pexels-lucanardone-3651820.jpg); */
+  background-position: center;
+  background-size: cover;
+  filter: brightness(1.2) contrast(1.1) saturate(1.2);
+}
+
+.value-card:nth-child(3) {
+  transform: translateY(var(--translate-third));
+}
+
+.value-card:nth-child(4) {
+  transform: translateY(var(--translate-fourth));
+}
+
+.value-card:first-child:hover {
+  transform: translateY(calc(var(--translate-first) + var(--hover-offset)));
+}
+.value-card:nth-child(2):hover {
+  transform: translateY(calc(var(--translate-second) + var(--hover-offset)));
+}
+
+.value-card:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/pexels-lucanardone-3651820.jpg);
+  background-position: center;
+  background-size: cover;
+  filter: brightness(1.2) contrast(1.1) saturate(1.2);
+  transition: filter 0.3s ease;
+  z-index: -1; /* Ensure the pseudo-element is behind the content */
+}
+
+.value-card:nth-child(2):hover::before {
+  filter: brightness(1.2) contrast(1.1) saturate(1.2) blur(3.5px);
+}
+
+.value-card:nth-child(3):hover {
+  transform: translateY(calc(var(--translate-third) + var(--hover-offset)));
+}
+
+.value-card:nth-child(4):hover {
+  transform: translateY(calc(var(--translate-fourth) + var(--hover-offset)));
 }
