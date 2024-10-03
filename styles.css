@@ -210,6 +210,16 @@ h4 {
   }
 }
 
+@media screen and (max-width: 450px) {
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    font-size: 0.8rem; /* Adjust as needed */
+  }
+}
+
 .product-card {
   display: flex;
   flex-direction: column;
@@ -236,6 +246,12 @@ h4 {
   transition: transform 0.3s ease;
   transform-origin: bottom center;
   transform: scale(1.4) translateY(-0.75rem);
+}
+
+@media screen and (max-width: 450px) {
+  .product-card img {
+    width: 30%;
+  }
 }
 
 .product-card > .collection-kit {
@@ -456,4 +472,35 @@ header.values-header {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+}
+
+@media  screen and (max-width: 650px) {
+  .values-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .values-container .value-card {
+    height: 300px;
+    transform: none;
+  }
+
+  .value-card:first-child:hover {
+    transform: none;
+  }
+
+  .value-card:nth-child(2):hover {
+    transform: none;
+  }
+
+  .value-card:nth-child(3):hover {
+    transform: none;
+  }
+
+  .value-card:nth-child(4):hover {
+    transform: none;
+  }
+
 }
